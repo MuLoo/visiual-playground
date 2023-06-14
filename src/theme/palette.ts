@@ -51,7 +51,10 @@ export type CustomPalette = Omit<PaletteOptions, "grey"> & {
   grey: CustomGrey;
   chart: ChartColorCustom;
   gradients: GradientCustom;
-};
+} & Record<
+    "primary" | "secondary" | "info" | "success" | "warning" | "error",
+    ColorTypeCustom
+  >;
 
 function createGradient(color1: string, color2: string) {
   return `linear-gradient(to bottom, ${color1}, ${color2})`;
@@ -59,7 +62,6 @@ function createGradient(color1: string, color2: string) {
 
 // ----------- variable -------------
 const defaultTheme = createTheme();
-console.log("defaultTheme ----", defaultTheme);
 // SETUP COLORS
 const GREY: CustomGrey = {
   0: "#FFFFFF",

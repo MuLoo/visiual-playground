@@ -9,9 +9,8 @@ import {
   ThemeOptions,
 } from "@mui/material/styles";
 import type {
-  Theme as MuiTheme,
   TypographyVariantsOptions,
-  Palette,
+  // Palette,
 } from "@mui/material/styles";
 // import type { CustomGrey } from './palette';
 
@@ -19,9 +18,8 @@ import palette from "./palette";
 import typography from "./typography";
 import componentsOverride from "./overrides";
 import shadows, { customShadows } from "./shadows";
-import type { GradientCustom, CustomPalette } from "./palette";
+import type { CustomPalette } from "./palette";
 
-console.log("palette ----", palette);
 // --------------------------------------------------
 
 declare module "@mui/material/styles" {
