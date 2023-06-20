@@ -5,6 +5,8 @@ import MainLayout, { mainLoader, mainAction } from "./layout/MainLayout";
 import ErrorPage from "./pages/error";
 import Home, { homeLoader, homeAction } from "./pages/home";
 import Iphone from "./pages/iphone";
+import Glass from "./pages/glass";
+import ThreeJSDEmo from "./pages/threeJS";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,14 @@ const router = createBrowserRouter([
           {
             path: "iphone",
             element: <Iphone />,
+          },
+          {
+            path: "three",
+            element: <ThreeJSDEmo />,
+          },
+          {
+            path: "glass",
+            element: <Glass />,
           },
         ],
       },

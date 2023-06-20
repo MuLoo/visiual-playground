@@ -19,6 +19,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
+import ThreeDRotationIcon from "@mui/icons-material/ThreeDRotation";
 // import Link from "@mui/material/Link";
 
 export async function mainLoader({ request }: { request: Request }) {
@@ -83,6 +84,16 @@ const RouteList = [
     icon: <PhoneIphoneIcon />,
     text: "iphone14",
     route: "/iphone",
+  },
+  {
+    icon: <ThreeDRotationIcon />,
+    text: "Three",
+    route: "/three",
+  },
+  {
+    icon: <ThreeDRotationIcon />,
+    text: "Glass",
+    route: "/glass",
   },
 ];
 
