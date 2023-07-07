@@ -1,5 +1,11 @@
-import { Outlet, redirect, Link } from "react-router-dom";
-import * as React from "react";
+import {
+  Outlet,
+  redirect,
+  Link,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
+import { useEffect, useState } from "react";
 import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
@@ -18,9 +24,8 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-import ThreeDRotationIcon from "@mui/icons-material/ThreeDRotation";
-// import Link from "@mui/material/Link";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import IsoIcon from "@mui/icons-material/Iso";
 
 export async function mainLoader({ request }: { request: Request }) {
   // 请求加载该页面所需要的数据
@@ -30,7 +35,8 @@ export async function mainLoader({ request }: { request: Request }) {
 
 export async function mainAction() {
   // 当页面发起非get的form提交，即触发action
-  return redirect("/home");
+  // 这个form也是react-router-dom 内置组件
+  return redirect("/room");
 }
 
 const drawerWidth = 240;
@@ -81,19 +87,29 @@ const RouteList = [
     route: "/room",
   },
   {
-    icon: <PhoneIphoneIcon />,
+    icon: <EmojiEventsIcon />,
     text: "iphone14",
     route: "/iphone",
   },
   {
-    icon: <ThreeDRotationIcon />,
-    text: "Three",
+    icon: <EmojiEventsIcon />,
+    text: "ThreeJS",
     route: "/three",
   },
   {
-    icon: <ThreeDRotationIcon />,
+    icon: <EmojiEventsIcon />,
     text: "Glass",
     route: "/glass",
+  },
+  {
+    icon: <EmojiEventsIcon />,
+    text: "Wechat",
+    route: "/wechat",
+  },
+  {
+    icon: <IsoIcon />,
+    text: "remove-BG",
+    route: "/removebg",
   },
 ];
 
@@ -137,12 +153,19 @@ const Drawer = styled(MuiDrawer, {
 
 export default function MainLayout() {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
   };
 
+  useEffect(() => {
+    if (location && location.pathname === "/") {
+      navigate("/room");
+    }
+  }, []);
   const handleDrawerClose = () => {
     setOpen(false);
   };

@@ -7,6 +7,8 @@ import Home, { homeLoader, homeAction } from "./pages/home";
 import Iphone from "./pages/iphone";
 import Glass from "./pages/glass";
 import ThreeJSDEmo from "./pages/threeJS";
+import Wechat from "./pages/wechat";
+import RemoveBG from "./pages/removeBG";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
           {
             path: "glass",
             element: <Glass />,
+          },
+          {
+            path: "wechat",
+            element: <Wechat />,
+          },
+          {
+            path: "removebg",
+            element: <RemoveBG />,
           },
         ],
       },
