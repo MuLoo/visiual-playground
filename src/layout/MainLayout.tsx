@@ -26,6 +26,7 @@ import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import IsoIcon from "@mui/icons-material/Iso";
+import ContentCutIcon from "@mui/icons-material/ContentCut";
 
 export async function mainLoader({ request }: { request: Request }) {
   // 请求加载该页面所需要的数据
@@ -110,6 +111,11 @@ const RouteList = [
     icon: <IsoIcon />,
     text: "remove-BG",
     route: "/removebg",
+  },
+  {
+    icon: <ContentCutIcon />,
+    text: "cutout",
+    route: "/cutout",
   },
 ];
 

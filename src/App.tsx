@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout, { mainLoader, mainAction } from "./layout/MainLayout";
@@ -9,6 +8,7 @@ import Glass from "./pages/glass";
 import ThreeJSDEmo from "./pages/threeJS";
 import Wechat from "./pages/wechat";
 import RemoveBG from "./pages/removeBG";
+import Cutout from "./pages/cutout";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +46,10 @@ const router = createBrowserRouter([
           {
             path: "removebg",
             element: <RemoveBG />,
+          },
+          {
+            path: "cutout",
+            element: <Cutout />,
           },
         ],
       },
